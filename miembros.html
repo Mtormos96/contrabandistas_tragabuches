@@ -5,6 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miembros</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #13111b;
+            color: black; /* Define el color del texto predeterminado como negro */
+        }
+
+        nav {
+            background-color: #ff0000;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black; /* Asegura que el texto dentro del div sea negro */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .grid-item {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: black; /* Asegura que el texto dentro de cada grid-item sea negro */
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -16,8 +92,26 @@
     </nav>
 
     <section>
-        <h1>Miembros de la Comparsa</h1>
-        <p>Contenido sobre los miembros...</p>
+        <div class="content">
+            <h1>Miembros de la filada</h1>
+            <h3><strong>Cabo:</strong> Juan Carlos "Gitano"</h3>
+    
+            <h2>Miembros</h2>
+            <div class="grid-container">
+                <div class="grid-item">Fermín</div>
+                <div class="grid-item">Jose María</div>
+                <div class="grid-item">Jorge Juan</div>
+                <div class="grid-item">Antonio</div>
+                <div class="grid-item">Javi</div>
+                <div class="grid-item">Manolo</div>
+                <div class="grid-item">Pedraza</div>
+                <div class="grid-item">Lolo</div>
+                <div class="grid-item">Santi</div>
+                <div class="grid-item">Juanito</div>
+                <div class="grid-item">Baldu</div>
+                <div class="grid-item">Yoan</div>
+            </div>
+        </div>
     </section>
 
     <script src="script.js"></script>
