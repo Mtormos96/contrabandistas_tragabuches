@@ -50,7 +50,7 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
             gap: 10px;
             padding: 20px;
         }
@@ -65,6 +65,13 @@
 
         .gallery img:hover {
             transform: scale(1.05);
+        }
+
+        /* Para pantallas pequeñas, ajusta a 1 columna para una mejor experiencia de usuario */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -81,14 +88,19 @@
         <h1 style="color: white; font-size: 2em;">Galería de Imágenes</h1>
         <p style="text-align: center; color: white; font-size: 1.5em;">Abril 2024</p>
 
-
         <div class="gallery">
             <img src="imagenes/desfile.jpg" alt="Desfile de abril de moros y cristianos comparsa contrabandistas 2024">
             <img src="imagenes/desfile_1.jpg" alt="Desfile de abril de moros y cristianos comparsa contrabandistas 2024 / 1">
             <img src="imagenes/entratea2024_2.jpg" alt="Entraeta de abril de moros y cristianos comparsa contrabandistas 2024">
             <img src="imagenes/entraeta2024.jpg" alt="Entraeta de abril de moros y cristianos comparsa contrabandistas 2024">
             <img src="imagenes/comparsa.jpg" alt="Comparsa en abril de moros y cristianos contrabandistas 2024">
-            <img src="Fotos/migany_viernes.jfif" alt="Comparsa en abril de moros y cristianos contrabandistas 2024">
+            <img src="Fotos/migany_viernes.jfif" alt="Medio año 27 Septiembre moros y cristianos contrabandistas 2024">
+            <img src="Fotos/migany_viernes1.jfif" alt="Medio año 27 Septiembre moros y cristianos contrabandistas 2024">
+            <img src="Fotos/migany_viernes2.jfif" alt="Medio año 27 Septiembre moros y cristianos contrabandistas 2024">
+            <img src="Fotos/migany_viernes3.jfif" alt="Medio año 27 Septiembre moros y cristianos contrabandistas 2024">
+            <img src="Fotos/migany_viernes3.jfif" alt="Medio año 27 Septiembre moros y cristianos contrabandistas 2024">
+            <img src="Fotos/desfile_migany_1.jfif" alt="Medio año 27 Septiembre moros y cristianos contrabandistas 2024">
+            <img src="Fotos/desfile_migany_2.jfif" alt="Medio año 27 Septiembre moros y cristianos contrabandistas 2024">
         </div>
     </section>
 
