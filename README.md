@@ -2,4 +2,4 @@
 - Proyecto personal de página web hosteada en github pages asociada a un código QR.
 - Función de testeo y aprendizaje.
 
-- Sitio web: [(San Vicente del Raspeig/Sant Vicent del Raspeig)](https://mtormos96.github.io/contrabandistas_tragabuches/)
+- [Sitio web](https://mtormos96.github.io/contrabandistas_tragabuches/)
