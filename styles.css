@@ -11,7 +11,7 @@
   --gold-light:   #F0D080;
   --gold-dark:    #8A6A1E;
   --crimson:      #8B1A1A;
-  --crimson-light:#C0392B;
+  --crimson-light:#E74C3C;
   --smoke:        #1A1410;
   --dark-bg:      #0E0B08;
   --dark-card:    #1C1510;
@@ -19,6 +19,13 @@
   --text-light:   #F5EDD8;
   --text-muted:   #A89060;
   --nav-height:   70px;
+}
+
+/* ── Global Sharpness & Rendering ── */
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── Reset & Base ── */

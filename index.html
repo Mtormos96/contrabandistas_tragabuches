@@ -158,8 +158,9 @@
       font-weight: 700;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--crimson-light);
+      color: var(--gold-light);
       margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
     .hero-eyebrow::before,
@@ -167,7 +168,7 @@
       content: '';
       width: 40px;
       height: 1px;
-      background: var(--crimson-light);
+      background: var(--gold-dark);
     }
 
     .hero-title {
@@ -193,6 +194,8 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.6));
+      text-shadow: none; /* Ensure no conflict with clip */
     }
 
     .hero-tagline {
@@ -607,9 +610,21 @@
 
     // ── Countdown ──
     function updateCountdown() {
-      // Target: day of fiestas 2027 (approximate — first weekend of October 2027)
-      const target = new Date('2027-10-09T10:00:00');
+      // Día de Fiestas 2027
+      const target = new Date('2027-03-30T10:00:00');
       const now = new Date();
+
+      // Caso especial: Estamos en Fiestas 2026 (Abril 9-15 aprox)
+      if (now.getFullYear() === 2026 && now.getMonth() === 3 && now.getDate() >= 9 && now.getDate() <= 15) {
+        const label = document.querySelector('.countdown-label');
+        if (label) label.innerHTML = '🔥 <span style="color:var(--gold-light); font-weight:bold;">¡ESTAMOS EN FIESTAS 2026!</span> 🔥';
+        document.querySelectorAll('.countdown-number').forEach(el => {
+          el.textContent = '🎉';
+          el.style.animation = 'pulse 1s infinite';
+        });
+        return;
+      }
+
       const diff = target - now;
 
       if (diff <= 0) {
