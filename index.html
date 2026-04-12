@@ -134,31 +134,7 @@
       }
     }
 
-    /* Hero image ── right side */
-    .hero-figure {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      height: 95vh;
-      max-height: 800px;
-      z-index: 2;
-      opacity: 0.92;
-      filter: drop-shadow(-20px 0 60px rgba(201, 168, 76, 0.25)) drop-shadow(0 0 80px rgba(139, 26, 26, 0.3));
-      animation: heroFloat 6s ease-in-out infinite;
-      pointer-events: none;
-    }
 
-    @keyframes heroFloat {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-12px);
-      }
-    }
 
     .hero-content {
       position: relative;
@@ -357,17 +333,7 @@
     }
 
     @media (max-width: 700px) {
-      .hero-figure { 
-        display: block; 
-        height: 55vh; 
-        max-height: 400px;
-        opacity: 0.35; 
-        right: 0; 
-        bottom: 0;
-        z-index: 1; 
-        pointer-events: none;
-        filter: drop-shadow(-10px 0 30px rgba(0,0,0,0.5));
-      }
+
       .hero-content {
         width: 100%;
         max-width: 100%;
