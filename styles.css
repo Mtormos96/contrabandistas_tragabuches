@@ -1,56 +1,484 @@
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #13111b;
-        }
+/* ============================================
+   FILADA TRAGABUCHES — COMPARSA CONTRABANDISTAS
+   Estilos Globales — Diseño Festero Premium
+   ============================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
-        nav {
-            width: 100%;
-            background-color: #ff0000; /* Cambia este color para personalizar la navbar */
-            padding: 10px;
-        }
+/* ── Design Tokens ── */
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #F0D080;
+  --gold-dark:    #8A6A1E;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --smoke:        #1A1410;
+  --dark-bg:      #0E0B08;
+  --dark-card:    #1C1510;
+  --dark-border:  #3A2A0E;
+  --text-light:   #F5EDD8;
+  --text-muted:   #A89060;
+  --nav-height:   70px;
+}
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        nav ul li {
-            margin: 0 15px;
-        }
+html { scroll-behavior: smooth; }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-        .content {
-            text-align: center;
-            max-width: 800px;
-            padding: 20px;
-            background-color: rgb(255, 255, 255);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
-        h1, h2, h3 {
-            margin: 20px 0;
-        }
+/* ── Navigation ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba(14,11,8,0.97) 0%, rgba(20,14,8,0.92) 100%);
+  border-bottom: 1px solid var(--gold-dark);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
 
-        p {
-            text-align: justify;
-            margin: 10px 0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
+nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav ul li a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--gold-light);
+  border-color: var(--gold-dark);
+  background: rgba(201,168,76,0.08);
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 50%; right: 50%;
+  height: 2px;
+  background: var(--gold);
+  transition: left 0.3s, right 0.3s;
+}
+
+nav ul li a:hover::after { left: 0; right: 0; }
+
+.nav-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-right: 2rem;
+  text-decoration: none !important;
+  border: none !important;
+  white-space: nowrap;
+}
+
+/* ── Page Wrapper ── */
+.page-wrapper {
+  padding-top: var(--nav-height);
+}
+
+/* ── Section spacing ── */
+section, .section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Divider ── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), var(--gold), var(--gold-dark), transparent);
+  margin: 0 auto;
+}
+
+.divider-ornament {
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--gold);
+  font-size: 1.5rem;
+  letter-spacing: 1rem;
+}
+
+/* ── Typography ── */
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  color: var(--gold-light);
+  text-shadow: 0 0 40px rgba(201,168,76,0.4), 0 2px 4px rgba(0,0,0,0.8);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Cards ── */
+.card {
+  background: linear-gradient(135deg, rgba(28,21,16,0.9) 0%, rgba(14,11,8,0.95) 100%);
+  border: 1px solid var(--dark-border);
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-dark);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 20px rgba(201,168,76,0.1);
+}
+
+.card:hover::before { opacity: 1; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  border-radius: 3px;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+.btn:hover { color: var(--dark-bg); }
+.btn:hover::before { transform: scaleX(1); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-light) 100%);
+  border-color: var(--crimson-light);
+  color: var(--gold-light);
+}
+
+.btn-primary:hover { filter: brightness(1.2); color: white; }
+.btn-primary::before { background: rgba(255,255,255,0.1); }
+
+/* ── Images ── */
+img { max-width: 100%; height: auto; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid var(--dark-border);
+  cursor: pointer;
+  aspect-ratio: 4/3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.3s;
+  filter: brightness(0.9);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+/* ── Year Badge ── */
+.year-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.1), transparent);
+  border-left: 3px solid var(--crimson);
+}
+
+/* ── Member Cards ── */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.member-card {
+  background: linear-gradient(135deg, var(--dark-card) 0%, rgba(14,11,8,0.9) 100%);
+  border: 1px solid var(--dark-border);
+  border-radius: 6px;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.member-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.member-card:hover {
+  border-color: var(--gold-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(201,168,76,0.1);
+}
+
+.member-card:hover::before { opacity: 1; }
+
+.member-card .member-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0.6rem;
+  display: block;
+  font-size: 1.8rem; /* fallback for emoji */
+  opacity: 0.85;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.member-card:hover .member-icon {
+  opacity: 1;
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.member-card .member-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+/* ── Content Prose ── */
+.prose {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--crimson);
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  color: #D4C5A0;
+}
+
+/* ── Smoke effect keyframe ── */
+@keyframes smokeRise {
+  0%   { transform: translateY(0) scale(1); opacity: 0.7; }
+  100% { transform: translateY(-80px) scale(1.8); opacity: 0; }
+}
+
+@keyframes fadePulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold), var(--gold-dark));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Footer ── */
+footer {
+  background: linear-gradient(180deg, var(--dark-bg) 0%, #050302 100%);
+  border-top: 1px solid var(--dark-border);
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+}
+
+footer .footer-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+footer .footer-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+footer .footer-divider {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+  margin: 1.5rem auto;
+}
+
+footer small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  nav ul { gap: 0; flex-wrap: wrap; }
+  nav ul li a { font-size: 0.75rem; padding: 0.4rem 0.7rem; letter-spacing: 0.05em; }
+  .nav-brand { font-size: 0.8rem; margin-right: 1rem; }
+  section, .section { padding: 3rem 1.25rem; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .member-grid { grid-template-columns: repeat(2, 1fr); }
+}

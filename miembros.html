@@ -1,122 +1,274 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miembros</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #13111b;
-            color: black; /* Define el color del texto predeterminado como negro */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miembros · Filada Tragabuches · Comparsa Contrabandistas</title>
+  <meta name="description" content="Los miembros de la Filada Tragabuches de la Comparsa Contrabandistas de San Vicente del Raspeig.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-hero {
+      position: relative;
+      padding: calc(var(--nav-height) + 4rem) 2rem 4rem;
+      text-align: center;
+      overflow: hidden;
+    }
 
-        nav {
-            background-color: #ff0000;
-            padding: 10px;
-        }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 100%, rgba(139,26,26,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 0%, rgba(201,168,76,0.1) 0%, transparent 50%);
+      z-index: 0;
+    }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+    .page-hero-content { position: relative; z-index: 1; }
 
-        nav ul li {
-            margin: 0 15px;
-        }
+    /* ── Cabo card ── */
+    .cabo-card {
+      background: linear-gradient(135deg, rgba(139,26,26,0.2) 0%, rgba(28,21,16,0.8) 100%);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto 3rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .cabo-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+    }
 
-        .content {
-            text-align: center;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: black; /* Asegura que el texto dentro del div sea negro */
-        }
+    .cabo-card .cabo-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--crimson-light);
+      margin-bottom: 0.5rem;
+    }
 
-        h1 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+    .cabo-card .cabo-icon {
+      width: 80px;
+      height: 80px;
+      display: block;
+      margin: 0 auto 1rem;
+      filter: drop-shadow(0 4px 12px rgba(201,168,76,0.35));
+      transition: transform 0.4s ease;
+    }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    .cabo-card:hover .cabo-icon {
+      transform: rotate(-10deg) scale(1.08);
+    }
 
-        ul li {
-            margin: 5px 0;
-            font-size: 1.2em;
-        }
+    .cabo-card .cabo-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+    }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            justify-items: center;
-            align-items: center;
-        }
+    .cabo-card .cabo-alias {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 0.3rem;
+    }
 
-        .grid-item {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            color: black; /* Asegura que el texto dentro de cada grid-item sea negro */
-        }
-    </style>
+    /* ── Stat numbers ── */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: rgba(201,168,76,0.05);
+      border: 1px solid var(--dark-border);
+      border-radius: 8px;
+    }
+
+    .stat-number {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      text-shadow: 0 0 20px rgba(201,168,76,0.3);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="imagenes.html">Imágenes</a></li>
-        </ul>
-    </nav>
+  <!-- Navigation -->
+  <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="nav-brand">⚔ TRAGABUCHES</a>
+    <ul>
+      <li><a href="index.html" id="nav-inicio">Inicio</a></li>
+      <li><a href="historia.html" id="nav-historia">Historia</a></li>
+      <li><a href="miembros.html" class="active" id="nav-miembros">Miembros</a></li>
+      <li><a href="imagenes.html" id="nav-imagenes">Galería</a></li>
+    </ul>
+  </nav>
 
-    <section>
-        <div class="content">
-            <h1>Miembros de la filada</h1>
-            <h3><strong>Cabo:</strong> Juan Carlos "Gitano"</h3>
-    
-            <h2>Miembros</h2>
-            <div class="grid-container">
-                <div class="grid-item">Ivan</div>
-                <div class="grid-item">Jose María</div>
-                <div class="grid-item">Jorge Juan</div>
-                <div class="grid-item">Antonio</div>
-                <div class="grid-item">Javi</div>
-                <div class="grid-item">Manolo</div>
-                <div class="grid-item">Pedraza</div>
-                <div class="grid-item">Juanito</div>
-                <div class="grid-item">Baldu</div>
-                <div class="grid-item">Yoan</div>
-                <div class="grid-item">Ezequiel</div>
-                <div class="grid-item">Ivan</div>
-                <div class="grid-item">Fermín</div>
-                <div class="grid-item">Marcos</div>
-                <div class="grid-item">Alvaro</div>
-            </div>
+  <main class="page-wrapper">
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-label">La Familia</span>
+        <h1 style="font-size:clamp(2rem,5vw,4rem); margin-bottom:0.5rem;">La Filada</h1>
+        <p class="subtitle">Los contrabandistas que dan vida a Tragabuches</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <section aria-labelledby="miembros-section">
+      <!-- Stats -->
+      <div class="stats-strip" role="list" aria-label="Estadísticas de la filada">
+        <div class="stat-item" role="listitem">
+          <span class="stat-number">15</span>
+          <span class="stat-label">Miembros</span>
         </div>
-    </section>
+        <div class="stat-item" role="listitem">
+          <span class="stat-number">1</span>
+          <span class="stat-label">Cabo</span>
+        </div>
+        <div class="stat-item" role="listitem">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Pólvora</span>
+        </div>
+        <div class="stat-item" role="listitem">
+          <span class="stat-number">💯</span>
+          <span class="stat-label">Espíritu Festero</span>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- Cabo -->
+      <div class="cabo-card" aria-label="Cabo de la filada">
+        <p class="cabo-title">⚔ Cabo de la filada ⚔</p>
+        <img class="cabo-icon" src="imagenes/arcabuz.svg" alt="navaja contrabandista" aria-hidden="true">
+        <div class="cabo-name">Juan Carlos</div>
+        <div class="cabo-alias">"El Gitano"</div>
+      </div>
+
+      <!-- Members grid -->
+      <h2 id="miembros-section" style="text-align:center; margin-bottom:0.5rem;">Los Contrabandistas</h2>
+      <div class="divider-ornament" aria-hidden="true">✦ · ✦</div>
+
+      <div class="member-grid" role="list" aria-label="Listado de miembros de la filada">
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Ivan</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Jose María</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Jorge Juan</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Antonio</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Javi</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Manolo</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Pedraza</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Juanito</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Baldu</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Yoan</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Ezequiel</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Ivan</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Fermín</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Marcos</span>
+        </div>
+        <div class="member-card" role="listitem">
+          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <span class="member-name">Alvaro</span>
+        </div>
+      </div>
+
+      <!-- Fun note -->
+      <div style="text-align:center; margin-top:3rem; padding:2rem; background:rgba(201,168,76,0.05); border-radius:8px; border:1px dashed var(--dark-border);">
+        <p style="color:var(--text-muted); font-style:italic;">
+          ¿Quieres unirte a la filada? Habla con El Gitano 😎
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">⚔ TRAGABUCHES ⚔</div>
+    <div class="footer-sub">Comparsa Contrabandistas · San Vicente del Raspeig</div>
+    <div class="footer-divider"></div>
+    <div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+      <a href="index.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Inicio</a>
+      <a href="historia.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Historia</a>
+      <a href="miembros.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Miembros</a>
+      <a href="imagenes.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Galería</a>
+    </div>
+    <small>© 2026 Filada Tragabuches · Comparsa Contrabandistas · San Vicente del Raspeig</small>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20
+        ? '0 4px 30px rgba(0,0,0,0.6)'
+        : 'none';
+    });
+  </script>
 </body>
 </html>

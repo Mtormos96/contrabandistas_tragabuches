@@ -1,96 +1,290 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #13111b;
-            color: black; /* Define el color del texto predeterminado como negro */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia del Tragabuches · Filada Tragabuches · Contrabandistas</title>
+  <meta name="description" content="Conoce la historia de José Ulloa Navarro 'Tragabuches', el torero, contrabandista y bandolero rondeño que da nombre a nuestra filada.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Historia Hero ── */
+    .page-hero {
+      position: relative;
+      padding: calc(var(--nav-height) + 4rem) 2rem 4rem;
+      text-align: center;
+      overflow: hidden;
+    }
 
-        nav {
-            background-color: #ff0000;
-            padding: 10px;
-        }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(139,26,26,0.3) 0%, transparent 65%),
+        linear-gradient(180deg, transparent 0%, rgba(14,11,8,0.4) 100%);
+      z-index: 0;
+    }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+    .page-hero-content { position: relative; z-index: 1; }
 
-        nav ul li {
-            margin: 0 15px;
-        }
+    /* ── Timeline ── */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 3rem auto;
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--gold-dark) 10%, var(--gold-dark) 90%, transparent);
+      transform: translateX(-50%);
+    }
 
-        .content {
-            text-align: left;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: black; /* Asegura que el texto dentro del div sea negro */
-        }
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      align-items: start;
+      margin-bottom: 2.5rem;
+      gap: 1rem;
+    }
 
-        h1 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+    .timeline-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; }
+    .timeline-item:nth-child(odd) .tl-empty   { grid-column: 3; }
+    .timeline-item:nth-child(even) .tl-content { grid-column: 3; text-align: left; }
+    .timeline-item:nth-child(even) .tl-empty   { grid-column: 1; }
 
-        h2 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
+    .tl-dot {
+      grid-column: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--dark-card);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      align-self: start;
+      margin-top: 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
 
-        p {
-            margin: 10px 0;
-            line-height: 1.6; /* Mejora la legibilidad del texto */
-        }
-    </style>
+    .tl-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--crimson-light);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .tl-content h3 {
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .tl-content p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #B0A080;
+    }
+
+    @media (max-width: 640px) {
+      .timeline::before { left: 28px; }
+      .timeline-item {
+        grid-template-columns: 60px 1fr;
+      }
+      .timeline-item:nth-child(odd) .tl-content,
+      .timeline-item:nth-child(even) .tl-content {
+        grid-column: 2;
+        text-align: left;
+      }
+      .timeline-item .tl-dot { grid-column: 1; }
+      .tl-empty { display: none; }
+    }
+
+    /* ── Banner img ── */
+    .historia-banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.6;
+      filter: sepia(30%) contrast(1.1);
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── Quote ornamental ── */
+    .legacy-box {
+      background: linear-gradient(135deg, rgba(139,26,26,0.15) 0%, rgba(28,21,16,0.6) 100%);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 8px;
+      padding: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .legacy-box .big-symbol {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="miembros.html">Miembros</a></li>
-            <li><a href="imagenes.html">Imágenes</a></li>
-        </ul>
-    </nav>
+  <!-- Navigation -->
+  <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="nav-brand">⚔ TRAGABUCHES</a>
+    <ul>
+      <li><a href="index.html" id="nav-inicio">Inicio</a></li>
+      <li><a href="historia.html" class="active" id="nav-historia">Historia</a></li>
+      <li><a href="miembros.html" id="nav-miembros">Miembros</a></li>
+      <li><a href="imagenes.html" id="nav-imagenes">Galería</a></li>
+    </ul>
+  </nav>
 
-    <div class="content">
-        <h1>José Ulloa Navarro, conocido como Tragabuches</h1>
-        <p><strong>José Mateo Balcázar Navarro</strong>, más conocido como José Ulloa Navarro, cambió su nombre al amparo de una pragmática real promulgada por el rey Carlos III, que permitía a los gitanos adoptar el apellido que desearan. El sobrenombre "Tragabuches" le fue legado por su padre, quien, según la tradición, ganó este apodo tras comerse un burro recién nacido (llamado "buche" en Andalucía) en adobo.</p>
-
-        <h2>Inicios en la tauromaquia</h2>
-        <p>Su carrera comenzó en el mundo del toreo, gracias a la influencia de su padrino de bautismo, Bartolomé Romero, pariente de Pedro Romero, fundador de la célebre escuela de tauromaquia de Ronda. Desde el año 1800 hasta 1802, José Ulloa participó como banderillero en las cuadrillas de Gaspar y José Romero, tomando finalmente la alternativa como torero en la plaza de toros de Salamanca.</p>
-
-        <h2>Cambio de rumbo: del ruedo al contrabando</h2>
-        <p>Pese a su prometedor inicio en la tauromaquia, José Ulloa abandonó pronto su carrera como matador. Establecido en Ronda, comenzó a dedicarse al contrabando junto a su pareja, la bailaora María “La Nena”. Mientras él se encargaba de obtener las mercancías en Gibraltar, ella se ocupaba de la distribución.</p>
-
-        <h2>De contrabandista a bandolero</h2>
-        <p>En 1814, recibió una invitación para volver a torear en los festejos taurinos organizados en Málaga en honor a la vuelta del rey Fernando VII. Sin embargo, un accidente en el camino le obligó a regresar a Ronda, donde descubrió la infidelidad de su compañera con un sacristán conocido como Pepe “El Listillo”. En un arrebato de furia, acabó con la vida de ambos y huyó a la sierra rondeña, donde se unió a una temida partida de bandoleros.</p>
-
-        <h2>El final del camino</h2>
-        <p>Durante su tiempo como bandolero, José Ulloa compartió aventuras con figuras legendarias como El Tempranillo y Los siete niños de Écija. En 1817, su partida fue capturada y ejecutada, excepto él, cuyo destino final es un misterio. Además de ser un temido bandolero, también fue cantaor, siendo conocida una letra atribuida a él que refleja su trágico destino: "Una mujer fue la causa / de mi perdición primera. / No hay ningún mal de los hombres / que de mujeres no venga".</p>
+  <main class="page-wrapper">
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-label">Nuestra Identidad</span>
+        <h1 style="font-size:clamp(2rem,5vw,4rem); margin-bottom:0.5rem;">José Ulloa Navarro</h1>
+        <p class="subtitle">"Tragabuches" — Torero · Contrabandista · Bandolero</p>
+      </div>
     </div>
-    <script src="script.js"></script>
+
+    <div class="divider"></div>
+
+    <!-- Content -->
+    <section aria-labelledby="historia-main">
+      <div class="prose">
+
+        <div class="card" style="margin-bottom:2rem; text-align:center;">
+          <div class="divider-ornament" aria-hidden="true" style="font-size:2rem;">🏴‍☠️</div>
+          <h2 id="historia-main" style="margin-bottom:1rem;">El Hombre Detrás del Nombre</h2>
+          <p>
+            <strong>José Mateo Balcázar Navarro</strong>, más conocido como <em>José Ulloa Navarro</em>, cambió su
+            nombre al amparo de la pragmática real del rey Carlos III que permitía a los gitanos adoptar el apellido
+            que desearan. El sobrenombre <strong>"Tragabuches"</strong> le fue legado por su padre, quien ganó este
+            apodo tras comerse un burro recién nacido —llamado "buche" en Andalucía— en adobo.
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <h2 style="text-align:center; margin-bottom:0.5rem;">Su Vida en el Tiempo</h2>
+        <div class="divider-ornament" aria-hidden="true">✦ · ✦</div>
+
+        <div class="timeline" role="list" aria-label="Cronología de Tragabuches">
+
+          <div class="timeline-item" role="listitem">
+            <div class="tl-content">
+              <span class="tl-date">c. 1776</span>
+              <h3>Los Orígenes</h3>
+              <p>Nace en Ronda (Málaga) en el seno de una familia gitana. Su padrino, Bartolomé Romero, lo introduce en el mundo del toreo.</p>
+            </div>
+            <div class="tl-dot" aria-hidden="true">🌟</div>
+            <div class="tl-empty"></div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="tl-empty"></div>
+            <div class="tl-dot" aria-hidden="true">🐂</div>
+            <div class="tl-content">
+              <span class="tl-date">1800–1802</span>
+              <h3>El Torero</h3>
+              <p>Participa como banderillero en las cuadrillas de los Romero. En Salamanca toma la alternativa y se convierte en matador de toros.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="tl-content">
+              <span class="tl-date">1803–1814</span>
+              <h3>El Contrabandista</h3>
+              <p>Abandona la tauromaquia y se establece en Ronda dedicándose al contrabando entre Gibraltar y Andalucía junto a su pareja, la bailaora María "La Nena".</p>
+            </div>
+            <div class="tl-dot" aria-hidden="true">🚢</div>
+            <div class="tl-empty"></div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="tl-empty"></div>
+            <div class="tl-dot" aria-hidden="true">⚔️</div>
+            <div class="tl-content">
+              <span class="tl-date">1814</span>
+              <h3>La Tragedia</h3>
+              <p>Descubre la infidelidad de su pareja con el sacristán Pepe "El Listillo". En un arrebato de furia, acaba con la vida de ambos y huye a la sierra rondeña.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="tl-content">
+              <span class="tl-date">1814–1817</span>
+              <h3>El Bandolero</h3>
+              <p>Se une a una partida de bandoleros en la serranía. Comparte andanzas con El Tempranillo y Los Siete Niños de Écija. También es conocido como cantaor de coplas.</p>
+            </div>
+            <div class="tl-dot" aria-hidden="true">🏔️</div>
+            <div class="tl-empty"></div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="tl-empty"></div>
+            <div class="tl-dot" aria-hidden="true">❓</div>
+            <div class="tl-content">
+              <span class="tl-date">1817</span>
+              <h3>El Misterio Final</h3>
+              <p>Su partida es capturada y ejecutada. El destino final de José Ulloa "Tragabuches" permanece como un misterio envuelto en leyenda.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Legacy -->
+        <div class="legacy-box">
+          <div class="big-symbol" aria-hidden="true">🎶</div>
+          <h2 style="margin-bottom:1rem;">Su Legado</h2>
+          <blockquote style="font-style:italic; font-size:1.15rem; color:var(--text-light); max-width:600px; margin:0 auto 1.5rem;">
+            "Una mujer fue la causa<br>de mi perdición primera.<br>No hay ningún mal de los hombres<br>que de mujeres no venga."
+          </blockquote>
+          <p style="color:var(--text-muted); font-size:0.9rem; max-width:500px; margin:0 auto;">
+            Además de torero, contrabandista y bandolero, Tragabuches fue <strong>cantaor</strong>.
+            Esta copla, atribuida a él, refleja su trágico destino y su alma andaluza.
+            Hoy, su nombre da vida y carácter a nuestra filada.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">⚔ TRAGABUCHES ⚔</div>
+    <div class="footer-sub">Comparsa Contrabandistas · San Vicente del Raspeig</div>
+    <div class="footer-divider"></div>
+    <div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+      <a href="index.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Inicio</a>
+      <a href="historia.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Historia</a>
+      <a href="miembros.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Miembros</a>
+      <a href="imagenes.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Galería</a>
+    </div>
+    <small>© 2026 Filada Tragabuches · Comparsa Contrabandistas · San Vicente del Raspeig</small>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20
+        ? '0 4px 30px rgba(0,0,0,0.6)'
+        : 'none';
+    });
+  </script>
 </body>
 </html>
-

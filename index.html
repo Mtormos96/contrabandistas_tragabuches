@@ -1,97 +1,536 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Imágenes y Vídeos - Filada Tragabuches | Comparsa Contrabandistas</title>
-    <meta name="description" content="Galería multimedia de la filada Tragabuches de la comparsa Contrabandistas (San Vicente del Raspeig/Sant Vicent del Raspeig): imágenes y vídeos de las fiestas de moros y cristianos, agrupados por año.">
-    <meta name="keywords" content="moros y cristianos, comparsa contrabandistas, filada tragabuches, galería, imágenes, vídeos, fiestas, año, desfile, entraeta">
-    <meta name="author" content="Filada Tragabuches - Comparsa Contrabandistas">
-    <link rel="canonical" href="https://mtormos96.github.io/contrabandistas_tragabuches/imagenes.html">
-    <meta property="og:title" content="Galería de Imágenes y Vídeos - Filada Tragabuches | Comparsa Contrabandistas (San Vicente del Raspeig/Sant Vicent del Raspeig)">
-    <meta property="og:description" content="Descubre las mejores fotos y vídeos de la filada Tragabuches en las fiestas de moros y cristianos de la comparsa Contrabandistas de San Vicente del Raspeig/Sant Vicent del Raspeig.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mtormos96.github.io/contrabandistas_tragabuches/imagenes.html">
-    <meta property="og:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Galería de Imágenes y Vídeos - Filada Tragabuches | Comparsa Contrabandistas">
-    <meta name="twitter:description" content="Galería multimedia de la filada Tragabuches de la comparsa Contrabandistas: imágenes y vídeos de las fiestas de moros y cristianos, agrupados por año.">
-    <meta name="twitter:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg">
-    <link rel="stylesheet" href="styles.css">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ImageGallery",
-      "name": "Galería de Imágenes y Vídeos Filada Tragabuches - Comparsa Contrabandistas",
-      "image": [
-        "https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg",
-        "https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros6.jpeg"
-      ]
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filada Tragabuches · Comparsa Contrabandistas · Moros y Cristianos</title>
+  <meta name="description" content="Web oficial de la Filada Tragabuches, perteneciente a la Comparsa Contrabandistas de San Vicente del Raspeig. Fiestas de Moros y Cristianos.">
+  <meta name="keywords" content="moros y cristianos, comparsa contrabandistas, filada tragabuches, san vicente del raspeig, sant vicent, fiestas, entraeta, desfile">
+  <meta name="author" content="Filada Tragabuches - Comparsa Contrabandistas">
+  <link rel="canonical" href="https://mtormos96.github.io/contrabandistas_tragabuches/">
+  <meta property="og:title" content="Filada Tragabuches · Comparsa Contrabandistas">
+  <meta property="og:description" content="Web oficial de la Filada Tragabuches. Moros y Cristianos de San Vicente del Raspeig.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mtormos96.github.io/contrabandistas_tragabuches/">
+  <meta property="og:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #13111b; /* Fondo oscuro */
-            color: white; /* Texto blanco por defecto */
-            text-align: center; /* Centra el texto y las imágenes */
-        }
 
-        nav {
-            background-color: #ff0000;
-            padding: 10px;
-        }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(139,26,26,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 60%, rgba(201,168,76,0.12) 0%, transparent 55%),
+        linear-gradient(180deg, #0E0B08 0%, #150D08 40%, #0A0806 100%);
+      z-index: 0;
+    }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+    /* Animated particles */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-        nav ul li {
-            margin: 0 15px;
-        }
+    .spark {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0;
+      animation: sparkFloat var(--dur, 6s) ease-in infinite var(--delay, 0s);
+      left: var(--x, 50%);
+      top: var(--y, 80%);
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    @keyframes sparkFloat {
+      0%   { opacity: 0; transform: translateY(0) scale(1); }
+      20%  { opacity: 0.9; }
+      80%  { opacity: 0.3; }
+      100% { opacity: 0; transform: translateY(-200px) scale(0.3); }
+    }
 
-        h1 {
-            font-size: 3em; /* Aumenta el tamaño del texto */
-            margin-top: 20px;
-            margin-bottom: 20px;
-            color: white; /* Asegura que el texto sea blanco */
-        }
+    /* Hero image ── right side */
+    .hero-figure {
+      position: absolute;
+      right: -2%;
+      bottom: 0;
+      height: 95vh;
+      max-height: 800px;
+      z-index: 2;
+      opacity: 0.92;
+      filter: drop-shadow(-20px 0 60px rgba(201,168,76,0.25))
+               drop-shadow(0 0 80px rgba(139,26,26,0.3));
+      animation: heroFloat 6s ease-in-out infinite;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
-        }
-    </style>
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 2rem;
+      max-width: 680px;
+      margin-left: 0;
+      margin-right: auto;
+      padding-left: 5vw;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--crimson-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--crimson-light);
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 0.95;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title .line1 {
+      display: block;
+      font-size: 0.55em;
+      letter-spacing: 0.3em;
+      color: var(--text-muted);
+      margin-bottom: 0.3em;
+    }
+
+    .hero-title .line2 {
+      display: block;
+      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 40%, var(--gold) 70%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* ── Countdown ── */
+    .countdown-section {
+      background: linear-gradient(135deg, rgba(139,26,26,0.15) 0%, rgba(14,11,8,0.8) 100%);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .countdown-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--crimson-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown-unit {
+      text-align: center;
+      min-width: 90px;
+    }
+
+    .countdown-number {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      text-shadow: 0 0 30px rgba(201,168,76,0.4);
+    }
+
+    .countdown-unit-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    .countdown-separator {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: var(--gold-dark);
+      align-self: center;
+      padding-bottom: 0.5rem;
+      animation: fadePulse 1s ease-in-out infinite;
+    }
+
+    /* ── Feature Cards ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* ── Quote ── */
+    .quote-block {
+      background: linear-gradient(135deg, rgba(139,26,26,0.1) 0%, rgba(28,21,16,0.5) 100%);
+      border-left: 4px solid var(--crimson);
+      border-radius: 0 8px 8px 0;
+      padding: 2rem 2.5rem;
+      margin: 4rem auto;
+      max-width: 720px;
+      position: relative;
+    }
+
+    .quote-block::before {
+      content: '"';
+      position: absolute;
+      top: -0.5rem;
+      left: 1.5rem;
+      font-family: 'Cinzel', serif;
+      font-size: 6rem;
+      line-height: 1;
+      color: var(--crimson);
+      opacity: 0.3;
+    }
+
+    .quote-block p {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .quote-block cite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+    }
+
+    /* ── Preview Gallery ── */
+    .preview-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .preview-gallery .gallery-item:first-child {
+      grid-column: 1 / 3;
+      aspect-ratio: 16/9;
+    }
+
+    @media (max-width: 600px) {
+      .preview-gallery { grid-template-columns: 1fr; }
+      .preview-gallery .gallery-item:first-child { grid-column: 1; aspect-ratio: 4/3; }
+      .hero-figure { opacity: 0.3; height: 60vh; }
+      .hero-content { padding-left: 1.5rem; text-align: center; margin: 0 auto; }
+      .countdown-separator { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="miembros.html">Miembros</a></li>
-            <li><a href="imagenes.html">Imágenes</a></li>
-        </ul>
-    </nav>
+  <!-- Navigation -->
+  <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="nav-brand">⚔ TRAGABUCHES</a>
+    <ul>
+      <li><a href="index.html" class="active" id="nav-inicio">Inicio</a></li>
+      <li><a href="historia.html" id="nav-historia">Historia</a></li>
+      <li><a href="miembros.html" id="nav-miembros">Miembros</a></li>
+      <li><a href="imagenes.html" id="nav-imagenes">Galería</a></li>
+    </ul>
+  </nav>
 
-    <h1>FILADA TRAGABUCHES</h1>
-    <img src="imagenes/landing1.png" alt="landing">
+  <main class="page-wrapper">
 
-    <script src="script.js"></script>
+    <!-- ══ HERO ══ -->
+    <section class="hero" aria-label="Portada principal">
+      <div class="hero-bg"></div>
+
+      <!-- Floating sparks -->
+      <div class="hero-particles" aria-hidden="true">
+        <div class="spark" style="--x:10%;--y:70%;--dur:7s;--delay:0s"></div>
+        <div class="spark" style="--x:20%;--y:85%;--dur:5s;--delay:1.2s"></div>
+        <div class="spark" style="--x:35%;--y:75%;--dur:8s;--delay:0.5s"></div>
+        <div class="spark" style="--x:15%;--y:90%;--dur:6s;--delay:2s"></div>
+        <div class="spark" style="--x:45%;--y:80%;--dur:9s;--delay:0.8s"></div>
+        <div class="spark" style="--x:55%;--y:88%;--dur:5.5s;--delay:1.5s"></div>
+        <div class="spark" style="--x:25%;--y:65%;--dur:7.5s;--delay:3s"></div>
+        <div class="spark" style="--x:8%;--y:78%;--dur:6.5s;--delay:2.5s"></div>
+        <div class="spark" style="--x:40%;--y:92%;--dur:4.5s;--delay:0.3s;background:var(--crimson-light)"></div>
+        <div class="spark" style="--x:30%;--y:82%;--dur:8s;--delay:1.8s;background:white"></div>
+      </div>
+
+      <!-- Hero figure -->
+      <img
+        class="hero-figure"
+        src="imagenes/hero_tragabuches.png"
+        alt="Contrabandista Tragabuches en traje festero"
+        aria-hidden="true"
+      >
+
+      <!-- Hero content -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">Comparsa Contrabandistas</div>
+
+        <h1 class="hero-title">
+          <span class="line1">Filada</span>
+          <span class="line2">TRAGABUCHES</span>
+        </h1>
+
+        <p class="hero-tagline">
+          Moros y Cristianos · San Vicente del Raspeig
+        </p>
+
+        <div class="hero-cta">
+          <a href="imagenes.html" class="btn" id="hero-cta-galeria">📷 Ver Galería</a>
+          <a href="historia.html" class="btn btn-primary" id="hero-cta-historia">Nuestra Historia</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ COUNTDOWN ══ -->
+    <div class="countdown-section" aria-label="Cuenta atrás para las fiestas">
+      <p class="countdown-label">⚑ Cuenta atrás hasta las Fiestas 2027</p>
+      <div class="countdown-grid">
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-days">—</span>
+          <span class="countdown-unit-label">Días</span>
+        </div>
+        <div class="countdown-separator" aria-hidden="true">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-hours">—</span>
+          <span class="countdown-unit-label">Horas</span>
+        </div>
+        <div class="countdown-separator" aria-hidden="true">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-minutes">—</span>
+          <span class="countdown-unit-label">Minutos</span>
+        </div>
+        <div class="countdown-separator" aria-hidden="true">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-seconds">—</span>
+          <span class="countdown-unit-label">Segundos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══ LA FILADA ══ -->
+    <section aria-labelledby="sec-filada">
+      <span class="section-label">La Filada</span>
+      <h2 id="sec-filada">Quiénes Somos</h2>
+      <div class="divider-ornament" aria-hidden="true">✦ · ✦</div>
+
+      <div class="features-grid">
+        <div class="card">
+          <span class="feature-icon" aria-hidden="true">🏹</span>
+          <h3>La Comparsa</h3>
+          <p>Somos la <strong>Filada Tragabuches</strong>, parte de la gloriosa Comparsa Contrabandistas de San Vicente del Raspeig. Año tras año desfilamos con orgullo en la <em>entraeta</em> general.</p>
+        </div>
+        <div class="card">
+          <span class="feature-icon" aria-hidden="true">💨</span>
+          <h3>La Pólvora</h3>
+          <p>El estruendo de los arcabuces, el olor a pólvora en el aire, la música de la charanga resonando en las calles. Eso somos. Una experiencia que entra por los sentidos y no se olvida.</p>
+        </div>
+        <div class="card">
+          <span class="feature-icon" aria-hidden="true">🎭</span>
+          <h3>El Espíritu Festero</h3>
+          <p>Las fiestas de Moros y Cristianos son mucho más que un desfile. Son hermandad, tradición y fiesta. Durante los días de fiestas, el Raspeig vibra y las calles se llenan de color y pólvora.</p>
+        </div>
+      </div>
+
+      <!-- Quote -->
+      <blockquote class="quote-block">
+        <p>Una mujer fue la causa de mi perdición primera. No hay ningún mal de los hombres que de mujeres no venga.</p>
+        <cite>— José Ulloa "Tragabuches", torero, contrabandista y bandolero rondeño (s. XIX)</cite>
+      </blockquote>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ PREVIEW GALERÍA ══ -->
+    <section aria-labelledby="sec-galeria">
+      <span class="section-label">Recuerdos</span>
+      <h2 id="sec-galeria">Últimas Fotos</h2>
+      <div class="divider-ornament" aria-hidden="true">✦ · ✦</div>
+      <p class="subtitle" style="text-align:center; margin-bottom:0;">Fiestas 2025 — Comparsa Contrabandistas</p>
+
+      <div class="preview-gallery" role="list">
+        <div class="gallery-item" role="listitem">
+          <img src="Fotos/2025/fiestas/moros7.jpeg" alt="Fiestas 2025 - Desfile contrabandistas" loading="lazy">
+          <div class="gallery-item-overlay"><span style="color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.8rem;">Fiestas 2025</span></div>
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="Fotos/2025/fiestas/moros6.jpeg" alt="Fiestas 2025 - Filada en el desfile" loading="lazy">
+          <div class="gallery-item-overlay"></div>
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="Fotos/2025/fiestas/moros1.jpeg" alt="Fiestas 2025 - Comparsa contrabandistas" loading="lazy">
+          <div class="gallery-item-overlay"></div>
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="Fotos/2025/fiestas/moros3.jpeg" alt="Fiestas 2025 - Entraeta" loading="lazy">
+          <div class="gallery-item-overlay"></div>
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="Fotos/2025/fiestas/moros2.jpeg" alt="Fiestas 2025 - Desfile general" loading="lazy">
+          <div class="gallery-item-overlay"></div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="imagenes.html" class="btn" id="preview-more-photos">Ver Todas las Fotos →</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ 2026 PREVIEW ══ -->
+    <section style="text-align:center; padding: 4rem 2rem;" aria-labelledby="sec-2026">
+      <span class="section-label">Nuevo</span>
+      <h2 id="sec-2026" class="shimmer-text" style="font-size:clamp(2rem,5vw,3.5rem); display:inline-block;">Fiestas 2026</h2>
+      <div class="divider-ornament" aria-hidden="true">✦ · ✦</div>
+      <p class="subtitle" style="margin-bottom:2rem;">Las primeras fotos ya disponibles</p>
+
+      <div style="max-width:900px; margin:0 auto;">
+        <div class="preview-gallery">
+          <div class="gallery-item">
+            <img src="Fotos/2026/fiestas/moros1.jpeg" alt="Fiestas 2026 - Foto 1" loading="lazy">
+            <div class="gallery-item-overlay"><span style="color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.8rem;">Fiestas 2026</span></div>
+          </div>
+          <div class="gallery-item">
+            <img src="Fotos/2026/fiestas/moros2.jpeg" alt="Fiestas 2026 - Foto 2" loading="lazy">
+            <div class="gallery-item-overlay"></div>
+          </div>
+          <div class="gallery-item">
+            <img src="Fotos/2026/fiestas/moros3.jpeg" alt="Fiestas 2026 - Foto 3" loading="lazy">
+            <div class="gallery-item-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="imagenes.html#section-2026" class="btn" id="index-cta-2026">🎆 Ver galería 2026 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">⚔ TRAGABUCHES ⚔</div>
+    <div class="footer-sub">Comparsa Contrabandistas · San Vicente del Raspeig</div>
+    <nav class="footer-divider" aria-hidden="true"></nav>
+    <div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+      <a href="index.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Inicio</a>
+      <a href="historia.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Historia</a>
+      <a href="miembros.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Miembros</a>
+      <a href="imagenes.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Galería</a>
+    </div>
+    <small>© 2026 Filada Tragabuches · Comparsa Contrabandistas · San Vicente del Raspeig</small>
+  </footer>
+
+  <script>
+    // ── Nav active state ──
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+
+    // Nav shadow on scroll
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 20
+        ? '0 4px 30px rgba(0,0,0,0.6)'
+        : 'none';
+    });
+
+    // ── Countdown ──
+    function updateCountdown() {
+      // Target: day of fiestas 2027 (approximate — first weekend of October 2027)
+      const target = new Date('2027-10-09T10:00:00');
+      const now = new Date();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        document.querySelectorAll('.countdown-number').forEach(el => el.textContent = '🎉');
+        return;
+      }
+
+      const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      const pad = n => String(n).padStart(2, '0');
+
+      document.getElementById('cd-days').textContent    = days;
+      document.getElementById('cd-hours').textContent   = pad(hours);
+      document.getElementById('cd-minutes').textContent = pad(minutes);
+      document.getElementById('cd-seconds').textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
