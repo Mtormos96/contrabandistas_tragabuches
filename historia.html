@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Historia del Tragabuches · Filada Tragabuches · Contrabandistas</title>
-  <meta name="description" content="Conoce la historia de José Ulloa Navarro 'Tragabuches', el torero, contrabandista y bandolero rondeño que da nombre a nuestra filada.">
+  <title>Historia de Tragabuches · José Ulloa Navarro · Filada Contrabandistas San Vicente</title>
+  <meta name="description" content="La historia de José Ulloa Navarro 'Tragabuches': torero, contrabandista y bandolero rondeño del siglo XIX. El personaje que da nombre a nuestra filada en las Fiestas de Moros y Cristianos de San Vicente del Raspeig.">
+  <meta name="keywords" content="tragabuches, José Ulloa Navarro, bandolero Ronda, contrabandista andaluz, moros y cristianos, filada tragabuches, historia, Ronda, siglo XIX">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mtormos96.github.io/contrabandistas_tragabuches/historia.html">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Filada Tragabuches">
+  <meta property="og:title" content="Historia de Tragabuches · José Ulloa Navarro, bandolero rondeño">
+  <meta property="og:description" content="Torero, contrabandista y bandolero: la leyenda de José Ulloa Navarro 'Tragabuches' que da nombre a la filada de la Comparsa Contrabandistas de San Vicente del Raspeig.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mtormos96.github.io/contrabandistas_tragabuches/historia.html">
+  <meta property="og:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg">
+  <meta property="og:locale" content="es_ES">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Historia de Tragabuches · Filada Contrabandistas">
+  <meta name="twitter:description" content="Torero, contrabandista, bandolero: la leyenda de José Ulloa Navarro 'Tragabuches'.">
+  <meta name="twitter:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg">
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Historia de José Ulloa Navarro, Tragabuches",
+    "description": "La historia de José Ulloa Navarro, conocido como Tragabuches: torero en Salamanca, contrabandista en Ronda y bandolero de la serranía.",
+    "url": "https://mtormos96.github.io/contrabandistas_tragabuches/historia.html",
+    "inLanguage": "es-ES",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Filada Tragabuches",
+      "url": "https://mtormos96.github.io/contrabandistas_tragabuches/"
+    },
+    "about": {
+      "@type": "Person",
+      "name": "José Ulloa Navarro",
+      "alternateName": "Tragabuches",
+      "description": "Torero, contrabandista y bandolero rondeño del siglo XIX. Da nombre a la Filada Tragabuches de la Comparsa Contrabandistas de San Vicente del Raspeig.",
+      "birthPlace": { "@type": "City", "name": "Ronda", "containedInPlace": { "@type": "State", "name": "Málaga" } }
+    }
+  }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <style>
     /* ── Historia Hero ── */
@@ -20,12 +60,15 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 50% 100%, rgba(139,26,26,0.3) 0%, transparent 65%),
-        linear-gradient(180deg, transparent 0%, rgba(14,11,8,0.4) 100%);
+        radial-gradient(ellipse at 50% 100%, rgba(139, 26, 26, 0.3) 0%, transparent 65%),
+        linear-gradient(180deg, transparent 0%, rgba(14, 11, 8, 0.4) 100%);
       z-index: 0;
     }
 
-    .page-hero-content { position: relative; z-index: 1; }
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+    }
 
     /* ── Timeline ── */
     .timeline {
@@ -38,7 +81,8 @@
       content: '';
       position: absolute;
       left: 50%;
-      top: 0; bottom: 0;
+      top: 0;
+      bottom: 0;
       width: 1px;
       background: linear-gradient(180deg, transparent, var(--gold-dark) 10%, var(--gold-dark) 90%, transparent);
       transform: translateX(-50%);
@@ -53,10 +97,23 @@
       gap: 1rem;
     }
 
-    .timeline-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; }
-    .timeline-item:nth-child(odd) .tl-empty   { grid-column: 3; }
-    .timeline-item:nth-child(even) .tl-content { grid-column: 3; text-align: left; }
-    .timeline-item:nth-child(even) .tl-empty   { grid-column: 1; }
+    .timeline-item:nth-child(odd) .tl-content {
+      grid-column: 1;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(odd) .tl-empty {
+      grid-column: 3;
+    }
+
+    .timeline-item:nth-child(even) .tl-content {
+      grid-column: 3;
+      text-align: left;
+    }
+
+    .timeline-item:nth-child(even) .tl-empty {
+      grid-column: 1;
+    }
 
     .tl-dot {
       grid-column: 2;
@@ -97,18 +154,23 @@
       color: #B0A080;
     }
 
-    @media (max-width: 640px) {
-      .timeline::before { left: 28px; }
-      .timeline-item {
-        grid-template-columns: 60px 1fr;
-      }
+    @media (max-width: 700px) {
+      .page-hero { padding: 5rem 1rem 3rem; }
+      .page-hero h1 { font-size: 2.2rem; }
+      
+      .timeline::before { left: 24px; }
+      .timeline-item { grid-template-columns: 50px 1fr; gap: 0.5rem; }
+      
       .timeline-item:nth-child(odd) .tl-content,
       .timeline-item:nth-child(even) .tl-content {
         grid-column: 2;
         text-align: left;
+        padding: 1.25rem;
       }
-      .timeline-item .tl-dot { grid-column: 1; }
+      .timeline-item .tl-dot { grid-column: 1; font-size: 1.25rem; }
       .tl-empty { display: none; }
+      .legacy-box { padding: 2rem 1.5rem; }
+      .legacy-box blockquote { font-size: 1rem; }
     }
 
     /* ── Banner img ── */
@@ -125,8 +187,8 @@
 
     /* ── Quote ornamental ── */
     .legacy-box {
-      background: linear-gradient(135deg, rgba(139,26,26,0.15) 0%, rgba(28,21,16,0.6) 100%);
-      border: 1px solid rgba(201,168,76,0.3);
+      background: linear-gradient(135deg, rgba(139, 26, 26, 0.15) 0%, rgba(28, 21, 16, 0.6) 100%);
+      border: 1px solid rgba(201, 168, 76, 0.3);
       border-radius: 8px;
       padding: 3rem;
       text-align: center;
@@ -139,11 +201,15 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Navigation -->
   <nav id="main-nav" role="navigation" aria-label="Navegación principal">
     <a href="index.html" class="nav-brand">⚔ TRAGABUCHES</a>
-    <ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="index.html" id="nav-inicio">Inicio</a></li>
       <li><a href="historia.html" class="active" id="nav-historia">Historia</a></li>
       <li><a href="miembros.html" id="nav-miembros">Miembros</a></li>
@@ -188,7 +254,8 @@
             <div class="tl-content">
               <span class="tl-date">c. 1776</span>
               <h3>Los Orígenes</h3>
-              <p>Nace en Ronda (Málaga) en el seno de una familia gitana. Su padrino, Bartolomé Romero, lo introduce en el mundo del toreo.</p>
+              <p>Nace en Ronda (Málaga) en el seno de una familia gitana. Su padrino, Bartolomé Romero, lo introduce en
+                el mundo del toreo.</p>
             </div>
             <div class="tl-dot" aria-hidden="true">🌟</div>
             <div class="tl-empty"></div>
@@ -200,7 +267,8 @@
             <div class="tl-content">
               <span class="tl-date">1800–1802</span>
               <h3>El Torero</h3>
-              <p>Participa como banderillero en las cuadrillas de los Romero. En Salamanca toma la alternativa y se convierte en matador de toros.</p>
+              <p>Participa como banderillero en las cuadrillas de los Romero. En Salamanca toma la alternativa y se
+                convierte en matador de toros.</p>
             </div>
           </div>
 
@@ -208,7 +276,8 @@
             <div class="tl-content">
               <span class="tl-date">1803–1814</span>
               <h3>El Contrabandista</h3>
-              <p>Abandona la tauromaquia y se establece en Ronda dedicándose al contrabando entre Gibraltar y Andalucía junto a su pareja, la bailaora María "La Nena".</p>
+              <p>Abandona la tauromaquia y se establece en Ronda dedicándose al contrabando entre Gibraltar y Andalucía
+                junto a su pareja, la bailaora María "La Nena".</p>
             </div>
             <div class="tl-dot" aria-hidden="true">🚢</div>
             <div class="tl-empty"></div>
@@ -220,7 +289,8 @@
             <div class="tl-content">
               <span class="tl-date">1814</span>
               <h3>La Tragedia</h3>
-              <p>Descubre la infidelidad de su pareja con el sacristán Pepe "El Listillo". En un arrebato de furia, acaba con la vida de ambos y huye a la sierra rondeña.</p>
+              <p>Descubre la infidelidad de su pareja con el sacristán Pepe "El Listillo". En un arrebato de furia,
+                acaba con la vida de ambos y huye a la sierra rondeña.</p>
             </div>
           </div>
 
@@ -228,7 +298,8 @@
             <div class="tl-content">
               <span class="tl-date">1814–1817</span>
               <h3>El Bandolero</h3>
-              <p>Se une a una partida de bandoleros en la serranía. Comparte andanzas con El Tempranillo y Los Siete Niños de Écija. También es conocido como cantaor de coplas.</p>
+              <p>Se une a una partida de bandoleros en la serranía. Comparte andanzas con El Tempranillo y Los Siete
+                Niños de Écija. También es conocido como cantaor de coplas.</p>
             </div>
             <div class="tl-dot" aria-hidden="true">🏔️</div>
             <div class="tl-empty"></div>
@@ -240,7 +311,8 @@
             <div class="tl-content">
               <span class="tl-date">1817</span>
               <h3>El Misterio Final</h3>
-              <p>Su partida es capturada y ejecutada. El destino final de José Ulloa "Tragabuches" permanece como un misterio envuelto en leyenda.</p>
+              <p>Su partida es capturada y ejecutada. El destino final de José Ulloa "Tragabuches" permanece como un
+                misterio envuelto en leyenda.</p>
             </div>
           </div>
 
@@ -250,8 +322,10 @@
         <div class="legacy-box">
           <div class="big-symbol" aria-hidden="true">🎶</div>
           <h2 style="margin-bottom:1rem;">Su Legado</h2>
-          <blockquote style="font-style:italic; font-size:1.15rem; color:var(--text-light); max-width:600px; margin:0 auto 1.5rem;">
-            "Una mujer fue la causa<br>de mi perdición primera.<br>No hay ningún mal de los hombres<br>que de mujeres no venga."
+          <blockquote
+            style="font-style:italic; font-size:1.15rem; color:var(--text-light); max-width:600px; margin:0 auto 1.5rem;">
+            "Una mujer fue la causa<br>de mi perdición primera.<br>No hay ningún mal de los hombres<br>que de mujeres no
+            venga."
           </blockquote>
           <p style="color:var(--text-muted); font-size:0.9rem; max-width:500px; margin:0 auto;">
             Además de torero, contrabandista y bandolero, Tragabuches fue <strong>cantaor</strong>.
@@ -270,21 +344,41 @@
     <div class="footer-sub">Comparsa Contrabandistas · San Vicente del Raspeig</div>
     <div class="footer-divider"></div>
     <div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:1.5rem;">
-      <a href="index.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Inicio</a>
-      <a href="historia.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Historia</a>
-      <a href="miembros.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Miembros</a>
-      <a href="imagenes.html" style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Galería</a>
+      <a href="index.html"
+        style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Inicio</a>
+      <a href="historia.html"
+        style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Historia</a>
+      <a href="miembros.html"
+        style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Miembros</a>
+      <a href="imagenes.html"
+        style="color:var(--text-muted); text-decoration:none; font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">Galería</a>
     </div>
     <small>© 2026 Filada Tragabuches · Comparsa Contrabandistas · San Vicente del Raspeig</small>
   </footer>
 
   <script>
     const nav = document.getElementById('main-nav');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu   = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 20
         ? '0 4px 30px rgba(0,0,0,0.6)'
         : 'none';
+      
+      if (window.scrollY > 100 && navMenu.classList.contains('open')) {
+        navToggle.classList.remove('open');
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   </script>
 </body>
+
 </html>

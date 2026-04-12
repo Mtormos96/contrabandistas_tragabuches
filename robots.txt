@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mtormos96.github.io/contrabandistas_tragabuches/sitemap.xml

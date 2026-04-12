@@ -3,8 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miembros · Filada Tragabuches · Comparsa Contrabandistas</title>
-  <meta name="description" content="Los miembros de la Filada Tragabuches de la Comparsa Contrabandistas de San Vicente del Raspeig.">
+  <title>Miembros de la Filada Tragabuches · Comparsa Contrabandistas San Vicente del Raspeig</title>
+  <meta name="description" content="Conoce a los miembros de la Filada Tragabuches, perteneciente a la Comparsa Contrabandistas de las Fiestas de Moros y Cristianos de San Vicente del Raspeig. Cabo y festeros de la filada.">
+  <meta name="keywords" content="miembros filada tragabuches, comparsa contrabandistas, moros y cristianos san vicente raspeig, festeros, cabo filada">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mtormos96.github.io/contrabandistas_tragabuches/miembros.html">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Filada Tragabuches">
+  <meta property="og:title" content="Miembros · Filada Tragabuches · Comparsa Contrabandistas">
+  <meta property="og:description" content="Los festeros de la Filada Tragabuches en las Fiestas de Moros y Cristianos de San Vicente del Raspeig.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mtormos96.github.io/contrabandistas_tragabuches/miembros.html">
+  <meta property="og:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg">
+  <meta property="og:locale" content="es_ES">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miembros · Filada Tragabuches">
+  <meta name="twitter:description" content="Los festeros de la Filada Tragabuches, Comparsa Contrabandistas de San Vicente del Raspeig.">
+  <meta name="twitter:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg">
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Miembros de la Filada Tragabuches",
+    "description": "Listado de miembros de la Filada Tragabuches de la Comparsa Contrabandistas de San Vicente del Raspeig.",
+    "url": "https://mtormos96.github.io/contrabandistas_tragabuches/miembros.html",
+    "inLanguage": "es-ES",
+    "isPartOf": { "@type": "WebSite", "name": "Filada Tragabuches", "url": "https://mtormos96.github.io/contrabandistas_tragabuches/" }
+  }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <style>
     .page-hero {
@@ -117,13 +145,25 @@
       color: var(--text-muted);
       margin-top: 0.3rem;
     }
+
+    @media (max-width: 700px) {
+      .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .stat-item   { padding: 1.25rem 0.75rem; }
+      .stat-number { font-size: 1.8rem; }
+      .cabo-card   { padding: 2rem 1.5rem; margin-bottom: 2rem; }
+      .cabo-card .cabo-icon { width: 60px; height: 60px; }
+      .cabo-card .cabo-name { font-size: 1.3rem; }
+    }
   </style>
 </head>
 <body>
   <!-- Navigation -->
   <nav id="main-nav" role="navigation" aria-label="Navegación principal">
     <a href="index.html" class="nav-brand">⚔ TRAGABUCHES</a>
-    <ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="index.html" id="nav-inicio">Inicio</a></li>
       <li><a href="historia.html" id="nav-historia">Historia</a></li>
       <li><a href="miembros.html" class="active" id="nav-miembros">Miembros</a></li>
@@ -167,7 +207,7 @@
       <!-- Cabo -->
       <div class="cabo-card" aria-label="Cabo de la filada">
         <p class="cabo-title">⚔ Cabo de la filada ⚔</p>
-        <img class="cabo-icon" src="imagenes/arcabuz.svg" alt="navaja contrabandista" aria-hidden="true">
+        <img loading="lazy" class="cabo-icon" src="imagenes/arcabuz.svg" alt="navaja contrabandista" aria-hidden="true">
         <div class="cabo-name">Juan Carlos</div>
         <div class="cabo-alias">"El Gitano"</div>
       </div>
@@ -178,63 +218,63 @@
 
       <div class="member-grid" role="list" aria-label="Listado de miembros de la filada">
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Ivan</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Jose María</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Jorge Juan</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Antonio</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Javi</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Manolo</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Pedraza</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Juanito</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Baldu</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Yoan</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Ezequiel</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Ivan</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Fermín</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Marcos</span>
         </div>
         <div class="member-card" role="listitem">
-          <img class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
+          <img loading="lazy" class="member-icon" src="imagenes/arcabuz.svg" alt="arcabuz" aria-hidden="true">
           <span class="member-name">Alvaro</span>
         </div>
       </div>
@@ -264,10 +304,25 @@
 
   <script>
     const nav = document.getElementById('main-nav');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu   = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 20
         ? '0 4px 30px rgba(0,0,0,0.6)'
         : 'none';
+      
+      if (window.scrollY > 100 && navMenu.classList.contains('open')) {
+        navToggle.classList.remove('open');
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   </script>
 </body>

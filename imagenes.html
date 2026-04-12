@@ -3,8 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería · Filada Tragabuches · Moros y Cristianos</title>
-  <meta name="description" content="Galería de imágenes de la Filada Tragabuches en las fiestas de Moros y Cristianos de San Vicente del Raspeig. Fotos agrupadas por año: 2024, 2025, 2026.">
+  <title>Galería de Fotos · Fiestas 2024 2025 2026 · Filada Tragabuches · Moros y Cristianos</title>
+  <meta name="description" content="Galería de fotos de la Filada Tragabuches en las Fiestas de Moros y Cristianos de San Vicente del Raspeig. Imágenes de entraetes, desfiles y Mig Any de 2024, 2025 y 2026.">
+  <meta name="keywords" content="fotos moros y cristianos san vicente raspeig, galería filada tragabuches, imágenes comparsa contrabandistas, entraeta, desfile, 2024 2025 2026, mig any">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mtormos96.github.io/contrabandistas_tragabuches/imagenes.html">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Filada Tragabuches">
+  <meta property="og:title" content="Galería de Fotos · Filada Tragabuches · Moros y Cristianos San Vicente">
+  <meta property="og:description" content="Fotos de la Filada Tragabuches en los desfiles y entraetes de Moros y Cristianos de San Vicente del Raspeig: 2024, 2025 y 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mtormos96.github.io/contrabandistas_tragabuches/imagenes.html">
+  <meta property="og:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2026/fiestas/moros1.jpeg">
+  <meta property="og:locale" content="es_ES">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Galería · Filada Tragabuches · Moros y Cristianos">
+  <meta name="twitter:description" content="Fotos de la Filada Tragabuches en los desfiles de Moros y Cristianos de San Vicente del Raspeig.">
+  <meta name="twitter:image" content="https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2026/fiestas/moros1.jpeg">
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Galería Filada Tragabuches - Comparsa Contrabandistas",
+    "description": "Fotos de la Filada Tragabuches en las Fiestas de Moros y Cristianos de San Vicente del Raspeig, agrupadas por año.",
+    "url": "https://mtormos96.github.io/contrabandistas_tragabuches/imagenes.html",
+    "inLanguage": "es-ES",
+    "image": [
+      "https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2026/fiestas/moros1.jpeg",
+      "https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2025/fiestas/moros7.jpeg",
+      "https://mtormos96.github.io/contrabandistas_tragabuches/Fotos/2024/fiestas/entraeta2024.jpg"
+    ],
+    "isPartOf": { "@type": "WebSite", "name": "Filada Tragabuches", "url": "https://mtormos96.github.io/contrabandistas_tragabuches/" }
+  }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <style>
     .page-hero {
@@ -169,8 +202,19 @@
       color: var(--gold-light);
     }
 
-    @media (max-width: 600px) {
-      .coming-soon-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 700px) {
+      .filter-tabs { 
+        justify-content: flex-start; 
+        overflow-x: auto; 
+        padding: 0 1.25rem 0.75rem; 
+        gap: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+      }
+      .filter-tab { flex-shrink: 0; padding: 0.5rem 1rem; font-size: 0.7rem; }
+      .year-badge { font-size: 1.2rem; }
+      .coming-soon-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
     }
   </style>
 </head>
@@ -178,7 +222,10 @@
   <!-- Navigation -->
   <nav id="main-nav" role="navigation" aria-label="Navegación principal">
     <a href="index.html" class="nav-brand">⚔ TRAGABUCHES</a>
-    <ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="index.html" id="nav-inicio">Inicio</a></li>
       <li><a href="historia.html" id="nav-historia">Historia</a></li>
       <li><a href="miembros.html" id="nav-miembros">Miembros</a></li>
@@ -387,12 +434,26 @@
   </footer>
 
   <script>
-    // ── Nav scroll ──
     const nav = document.getElementById('main-nav');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu   = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 20
         ? '0 4px 30px rgba(0,0,0,0.6)'
         : 'none';
+      
+      if (window.scrollY > 100 && navMenu.classList.contains('open')) {
+        navToggle.classList.remove('open');
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
 
     // ── Lightbox ──
